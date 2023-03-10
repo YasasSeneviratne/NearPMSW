@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+while read p; do
+	sudo chmod +x "$p"
+done < shfiles
 cd baseline/logging/pmdk
 make -j EXTRA_CFLAGS="-Wno-error" 
 sudo make install
